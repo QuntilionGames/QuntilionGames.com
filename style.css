@@ -1,0 +1,246 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+	list-style: none;
+}
+:root{
+	--bg-color: #222327;
+	--text-color: #fff;
+	--main-color: #29fd53;
+}
+body{
+	min-height: 100vh;
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: transparent;
+	padding: 28 12%;
+	transition: all .50s ease;
+}
+.logo{
+	display: flex;
+	align-items: center;
+}
+.logo i{
+	color: var(--main-color);
+	font-size: 28px;
+	margin-right: 3px;
+}
+.logo span{
+	color: var(--text-color);
+	font-size: 1.7rem;
+	font-weight: 600;
+}
+.navbar{
+	display: flex;
+}
+.navbar a{
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: 500;
+	padding: 5px 0;
+	margin: 0px 30px;
+	transition: all .50s ease;
+}
+.navbar a:hover{
+	color: var(--main-color);
+}
+.navbar a.active{
+	color: var(--main-color);
+}
+.main{
+	display: flex;
+	align-items: center;
+}
+.main a{
+	margin-right: 25px;
+	margin-left: 10px;
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: all .50s ease;
+}
+.user{
+	display: flex;
+	align-items: center;
+}
+.user i{
+	color: var(--main-color);
+	font-size: 28px;
+	margin-right: 7px;
+}
+.main a:hover{
+	color: var(--main-color);
+}
+#menu-icon{
+	font-size: 35px;
+	color: var(--text-color);
+	cursor: pointer;
+	z-index: 10001;
+	display: none;
+}
+
+
+@media (max-width: 1280px){
+	header{
+		padding: 14px 2%;
+		transition: .2s;
+	}
+	.navbar a{
+		padding: 5px 0;
+		margin: 0px 20px;
+	}
+}
+@media (max-width: 1280px){
+	#menu-icon{
+		display: block;
+	}
+	.navbar{
+		position: absolute;
+		top: 100%;
+		right: -100%;
+		width: 270px;
+		height: 29vh;
+		background: var(--main-color);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		border-radius: 10px;
+		transition: all .50s ease;
+	}
+	.navbar a{
+		display: block;
+		margin: 12px 0;
+		padding: 0px 25px;
+		transition: all .50s ease;
+	}
+	.navbar a:hover{
+		color: var(--text-color);
+		transform: translateY(5px);
+	}
+	.navbar a.active{
+		color: var(--text-color);
+	}
+	.navbar.open{
+		right: 2%;
+	}
+}
+
+.wrapper{
+	height: 100px;
+	width: 360px;
+	background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+	border-radius: 10px;
+	animation: animate 1.5s linear infinite;
+}
+.wrapper .display,
+.wrapper span{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.wrapper .display{
+	z-index: 999;
+	background: #1b1b1b;
+	height: 85px;
+	width: 345px;
+	border-radius: 6px;
+	text-align: center;
+}
+.wrapper .display #time{
+	line-height: 85px;
+	color: #fff;
+	font-size: 50px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+	animation: 1.5s linear infinite;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+@keyframes animate {
+	100%{
+		filter: hue-rotate(360deg);
+	}
+}
+.wrapper span{
+	height: 100%;
+	width: 100%;
+	background: inherit;
+	border-radius: 10px;
+}
+.wrapper span:first-child{
+	filter: blur(10px);
+}
+.wrapper span:last-child{
+	filter: blur(20px);
+}
+
+
+.wrapper1{
+	height: 300px;
+	width: 660px;
+	background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+	border-radius: 10px;
+	animation: animate 1.5s linear infinite;
+}
+.wrapper1 .display1,
+.wrapper1 span{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.wrapper1 .display1{
+	z-index: 999;
+	background: #1b1b1b;
+	height: 285px;
+	width: 645px;
+	border-radius: 6px;
+	text-align: center;
+}
+.wrapper1 .display1 #time{
+	line-height: 85px;
+	color: #fff;
+	font-size: 50px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+	animation: 1.5s linear infinite;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+@keyframes animate {
+	100%{
+		filter: hue-rotate(360deg);
+	}
+}
+.wrapper1 span{
+	height: 100%;
+	width: 100%;
+	background: inherit;
+	border-radius: 10px;
+}
+.wrapper1 span:first-child{
+	filter: blur(10px);
+}
+.wrapper1 span:last-child{
+	filter: blur(20px);
+}
+h4{
+	color: var(--bg-color);
+	bottom: 41.1rem;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="credits.css">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+	 <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<header>
+		<a href="#" class="logo"><i class="ri-home-5-line"><span>QuntilionGames</span></i>
+		</a>
+
+		<ul class="navbar">
+			<li><a href="file:///C:/Users/Kosi/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%D0%BD%20%D0%BF%D0%BB%D0%BE%D1%82/QuntilionGames/OficialWebSite/home.html">Home</a></li>
+			<li><a href="file:///C:/Users/Kosi/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%D0%BD%20%D0%BF%D0%BB%D0%BE%D1%82/QuntilionGames/OficialWebSiteGs/index.html">Games</a></li>
+			<li><a href="file:///C:/Users/Kosi/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%D0%BD%20%D0%BF%D0%BB%D0%BE%D1%82/QuntilionGames/OficialWebSiteOnGs/Games%20Online.html">Online Games</a></li>
+			<li><a href="file:///C:/Users/Kosi/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%D0%BD%20%D0%BF%D0%BB%D0%BE%D1%82/QuntilionGames/OficialWebSiteCredits/index.html" class="active">Credits</a></li>
+			<li><a href="#">Special Event</a></li>
+		</ul>
+
+		<div class="main">
+			<a href="" class="user"><i class="ri-shield-user-fill"></i>Coming Soon</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
+	<center>
+		<h2>ALL PERSONAL</h2>
+		<h2>ALL PERSONAL</h2>
+		<h2>ALL PERSONAL</h2>
+
+<h1><i class="ri-user-fill"></i>ALL PERSONAL</h1>
+
+		<div class="user-cards">
+			<div class="card">
+			<div class="header">Konstantin Naydenov</div>
+			<div class="body">konstantinqg@gmail.com</div>
+		</div>
+	</div>
+	</center>
+
+	<script type="text/javascript">
+		let menu = document.querySelector('#menu-icon')
+		let navbar = document.querySelector('.navbar')
+
+		menu.onclick = () => {
+			menu.classList.toggle('bx-x');
+			navbar.classList.toggle('open');
+
+			const userCardTemplate = document.querySelector("[data-user-template]")
+const userCardContainer = document.querySelector("[data-user-cards-container]")
+const searchInput = document.querySelector("[data-search]")
+
+let users = []
+
+searchInput.addEventListener("input", e => {
+  const value = e.target.value.toLowerCase()
+  users.forEach(user => {
+    const isVisible =
+      user.name.toLowerCase().includes(value) ||
+      user.email.toLowerCase().includes(value)
+    user.element.classList.toggle("hide", !isVisible)
+  })
+})
+
+  .then(res => res.json())
+  .then(data => {
+    users = data.map(user => {
+      const card = userCardTemplate.content.cloneNode(true).children[0]
+      const header = card.querySelector("[data-header]")
+      const body = card.querySelector("[data-body]")
+      header.textContent = user.name
+      body.textContent = user.email
+      userCardContainer.append(card)
+      return { name: user.name, email: user.email, element: card }
+    })
+  })
+		}
+
+	</script>
+
+</body>
+</html>
